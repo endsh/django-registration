@@ -250,7 +250,6 @@ class RegistrationProfile(models.Model):
                     'site': site}
         subject = render_to_string('registration/activation_email_subject.txt',
                                    ctx_dict)
-        # Email subject *must not* contain newlines
         subject = ''.join(subject.splitlines())
         
         message = render_to_string('registration/activation_email.txt',
